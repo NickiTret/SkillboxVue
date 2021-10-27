@@ -1,0 +1,1 @@
+export const messageText = 'Другое сообщение выводимое в Alert!';

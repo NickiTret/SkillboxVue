@@ -11,7 +11,7 @@
         </div>
 
         <div class="content__catalog">
-            <ProductFilter :price-from.sync="filterPriceFrom" :price-to.sync="filterPriceTo" :category-id.sync="filterCategoryId" />
+            <ProductFilter :price-from.sync="filterPriceFrom" :price-to.sync="filterPriceTo" :category-id.sync="filterCategoryId" :filter-color.sync ="filterColors" />
             <section class="catalog">
 
 					<ProductList :products="products" />
@@ -41,6 +41,7 @@ export default {
 		  filterPriceFrom: 0,
 		  filterPriceTo: 0,
 		  filterCategoryId: 0,
+		  filterColors: 0,
 		  page: 1,
 		  productsPerPage: 3,
 		  

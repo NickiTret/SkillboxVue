@@ -13,41 +13,19 @@
       <span class="catalog__price"> {{ product.price }} ₽ </span>
 
       <ul class="colors colors--black">
-        <li class="colors__item">
+        <li class="colors__item"  v-for="colorProduct in product.colorArray" :key="colorProduct" :colorProduct="colorProduct" >
           <label class="colors__label">
             <input
               class="colors__radio sr-only"
               type="radio"
-              value="#73B6EA"
+              :value="colorProduct"
 				  v-model="color"
             />
-            <span class="colors__value" style="background-color: #73b6ea">
+            <span class="colors__value" :style="{'background-color': colorProduct}">
             </span>
           </label>
         </li>
-        <li class="colors__item">
-          <label class="colors__label">
-            <input
-              class="colors__radio sr-only"
-              type="radio"
-              value="#8BE000"
-				  v-model="color"
-            />
-            <span class="colors__value" style="background-color: #8be000">
-            </span>
-          </label>
-        </li>
-        <li class="colors__item">
-          <label class="colors__label">
-            <input
-              class="colors__radio sr-only"
-              type="radio"
-              value="#222"
-				  v-model="color"
-            />
-            <span class="colors__value" style="background-color: #222"> </span>
-          </label>
-        </li>
+       
       </ul>
     </li>
 </template>
@@ -56,10 +34,10 @@
 export default {
 	data(){
 		return {
-			color: '#73B6EA'
+			color: this.product.colorArray
 		};
 	},
-	props: ['product'],
+	props: ['product',],
 }
 </script>
 

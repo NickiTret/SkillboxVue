@@ -12,7 +12,7 @@ export default [{
         title: "Ультразвуковая зубная щётка Playbrush Smart Sonic",
         price: 5660,
         image: '/img/toothbrush.jpg',
-        colorArray: ['#222', '#8BE000', '#73B6EA']
+        colorArray: ['#939393', '#8BE000', '#73B6EA']
     },
     {
         id: 3,
@@ -20,7 +20,7 @@ export default [{
         title: "Смартфон Xiaomi Mi Mix 3 6/128GB",
         price: 21790,
         image: '/img/phone.jpg',
-        colorArray: ['#222', '#8BE000', '#73B6EA']
+        colorArray: ['#222', '#939393', '#73B6EA']
     },
     {
         id: 4,
@@ -36,7 +36,7 @@ export default [{
         title: "Смартфон Xiaomi Mi A3 4/64GB Android One",
         price: 14960,
         image: '/img/phone-2.jpg',
-        colorArray: ['#222', '#8BE000', '#73B6EA']
+        colorArray: ['#222', '#939393', '#73B6EA']
     },
     {
         id: 6,
@@ -44,7 +44,7 @@ export default [{
         title: "Смартфон Xiaomi Redmi 6/128GB",
         price: 8960,
         image: '/img/phone-3.jpg',
-        colorArray: ['#222', '#8BE000', '#73B6EA']
+        colorArray: ['#8BE000', '#FFF', '#73B6EA']
     },
     {
         id: 7,
@@ -52,7 +52,7 @@ export default [{
         title: "Электрический дрифт-карт Razor Crazy Cart",
         price: 39900,
         image: '/img/bicycle.jpg',
-        colorArray: ['#222', '#8BE000', '#73B6EA']
+        colorArray: ['#222', '#8BE000', '#FF6B00']
     },
     {
         id: 8,
@@ -68,7 +68,7 @@ export default [{
         title: "Детский трюковой самокат Razor Grom",
         price: 4990,
         image: '/img/scooter.jpg',
-        colorArray: ['#222', '#8BE000', '#73B6EA']
+        colorArray: ['#222', '#8BE000', '#FF6B00']
     },
     {
         id: 10,
@@ -76,7 +76,7 @@ export default [{
         title: "Роллерсёрф Razor RipStik Air Pro",
         price: 6690,
         image: '/img/ripstik.jpg',
-        colorArray: ['#222', '#8BE000', '#73B6EA']
+        colorArray: ['#FF6B00', '#8BE000', '#73B6EA']
     },
     {
         id: 11,
@@ -84,7 +84,7 @@ export default [{
         title: "Наушники AirPods с беспроводным зарядным футляром",
         price: 16560,
         image: '/img/airpods.jpg',
-        colorArray: ['#222', '#8BE000', '#73B6EA']
+        colorArray: ['#222', '#FFF', '#FF6B00']
     },
     {
         id: 12,
@@ -92,7 +92,7 @@ export default [{
         title: "Наушники Sony",
         price: 30690,
         image: '/img/headphones.jpg',
-        colorArray: ['#222', '#8BE000', '#73B6EA']
+        colorArray: ['#8BE000', '#939393', '#000']
     },
     {
         id: 13,
@@ -108,7 +108,7 @@ export default [{
         title: "Стиральная машина Indesit IWUB 4085",
         price: 12990,
         image: '/img/stiralka.jfif',
-        colorArray: ['#222', '#8BE000', '#73B6EA']
+        colorArray: ['#FF6B00', '#8BE000', '#FFBE15']
     },
     {
         id: 15,
@@ -116,7 +116,7 @@ export default [{
         title: "Игровая приставка Microsoft Xbox Series S 512 ГБ",
         price: 28990,
         image: '/img/xbox.jfif',
-        colorArray: ['#222', '#8BE000', '#73B6EA']
+        colorArray: ['#222', '#8BE000', '#FF6B00']
     },
     {
         id: 16,
@@ -124,7 +124,7 @@ export default [{
         title: "Телевизор NanoCell LG 55SM9800 55",
         price: 82780,
         image: '/img/tele.jfif',
-        colorArray: ['#222', '#8BE000', '#73B6EA']
+        colorArray: ['#FF6B00', '#939393', '#73B6EA']
     },
     {
         id: 17,

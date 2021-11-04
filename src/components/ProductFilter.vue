@@ -29,50 +29,14 @@
                     <fieldset class="form__block">
                         <legend class="form__legend">Цвет</legend>
                         <ul class="colors">
-                            <li class="colors__item">
+                            <li class="colors__item" v-for="filtercolor in filtercolors" :key="filtercolor" :filtercolor="filtercolor">
                                 <label class="colors__label">
-                  <input class="colors__radio sr-only" type="radio" name="color" value="#73B6EA" checked="">
-                  <span class="colors__value" style="background-color: #73B6EA;">
+                  <input class="colors__radio sr-only" type="radio" :value="filtercolor" v-model="colorValue">
+                  <span class="colors__value" :style="{'background-color': filtercolor}">
                   </span>
                 </label>
                             </li>
-                            <li class="colors__item">
-                                <label class="colors__label">
-                  <input class="colors__radio sr-only" type="radio" name="color" value="#FFBE15">
-                  <span class="colors__value" style="background-color: #FFBE15;">
-                  </span>
-                </label>
-                            </li>
-                            <li class="colors__item">
-                                <label class="colors__label">
-                  <input class="colors__radio sr-only" type="radio" name="color" value="#939393">
-                  <span class="colors__value" style="background-color: #939393;">
-                </span></label>
-                            </li>
-                            <li class="colors__item">
-                                <label class="colors__label">
-                  <input class="colors__radio sr-only" type="radio" name="color" value="#8BE000">
-                  <span class="colors__value" style="background-color: #8BE000;">
-                </span></label>
-                            </li>
-                            <li class="colors__item">
-                                <label class="colors__label">
-                  <input class="colors__radio sr-only" type="radio" name="color" value="#FF6B00">
-                  <span class="colors__value" style="background-color: #FF6B00;">
-                </span></label>
-                            </li>
-                            <li class="colors__item">
-                                <label class="colors__label">
-                  <input class="colors__radio sr-only" type="radio" name="color" value="#FFF">
-                  <span class="colors__value" style="background-color: #FFF;">
-                </span></label>
-                            </li>
-                            <li class="colors__item">
-                                <label class="colors__label">
-                  <input class="colors__radio sr-only" type="radio" name="color" value="#000">
-                  <span class="colors__value" style="background-color: #000;">
-                </span></label>
-                            </li>
+                            
                         </ul>
                     </fieldset>
 
@@ -146,27 +110,26 @@
             </aside>
 </template>
 <script>
+
 import categories from "../data/categories";
+import filtercolors from "../data/filtercolors"
 export default {
 	data(){
 		return {
+			colorValue: this.filtercolors,
 			currentPriceFrom: 0,
 			currentPriceTo: 0,
 			currentCategoryId: 0,
-			// currentPriceFrom: {
-			// 	get(){
-			// 		return this.priceFrom;
-			// 	},
-			// 	set(value){
-			// 		this.$emit('update:priceFrom', value )
-			// 	},
-			// },
+			// filterColors: product.colorValue,
 		}
 	},
 	props: ['priceFrom','priceTo','categoryId'],
 	computed: {
 		categories(){
 			return categories;
+		},
+		filtercolors(){
+			return filtercolors;
 		}
 	},
 	watch: {
@@ -179,17 +142,22 @@ export default {
 		categoryId(value){
 			this.currentCategoryId = value;
 		},
+		colorFilter(value){
+			this.colorValue = value;
+		}
 	},
 	methods: {
 		submit(){
 			this.$emit('update:priceFrom', this.currentPriceFrom);
 			this.$emit('update:priceTo', this.currentPriceTo);
 			this.$emit('update:categoryId', this.currentCategoryId);
+			this.$emit('update:colorFilter', this.colorValue);
 		},
 		reset(){
 			this.$emit('update:priceFrom', 0);
 			this.$emit('update:priceTo', 0);
 			this.$emit('update:categoryId', 0);
+			this.$emit('update:colorFilter', 0);
 		}
 	}
 }

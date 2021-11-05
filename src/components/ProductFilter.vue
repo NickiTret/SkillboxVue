@@ -31,7 +31,7 @@
                         <ul class="colors">
                             <li class="colors__item" v-for="filtercolor in filtercolors" :key="filtercolor" :filtercolor="filtercolor">
                                 <label class="colors__label">
-                  <input class="colors__radio sr-only" type="radio" :value="filtercolor" v-model="colorValue">
+                  <input class="colors__radio sr-only" type="radio" :value="filtercolor" v-model="currentColor">
                   <span class="colors__value" :style="{'background-color': filtercolor}">
                   </span>
                 </label>
@@ -101,11 +101,11 @@
                     </fieldset>
 
                     <button class="filter__submit button button--primery" type="submit">
-            Применить
-          </button>
+            				Применить
+          				</button>
                     <button class="filter__reset button button--second" type="button" @click.prevent="reset">
-            Сбросить
-          </button>
+            				Сбросить
+          				</button>
                 </form>
             </aside>
 </template>
@@ -116,14 +116,14 @@ import filtercolors from "../data/filtercolors"
 export default {
 	data(){
 		return {
-			colorValue: this.filtercolors,
+			currentColor: this.colorFilter,
 			currentPriceFrom: 0,
 			currentPriceTo: 0,
 			currentCategoryId: 0,
 			// filterColors: product.colorValue,
 		}
 	},
-	props: ['priceFrom','priceTo','categoryId'],
+	props: ['priceFrom','priceTo','categoryId', 'colorFilter'],
 	computed: {
 		categories(){
 			return categories;
@@ -143,7 +143,7 @@ export default {
 			this.currentCategoryId = value;
 		},
 		colorFilter(value){
-			this.colorValue = value;
+			this.currentColor = value;
 		}
 	},
 	methods: {
@@ -151,7 +151,7 @@ export default {
 			this.$emit('update:priceFrom', this.currentPriceFrom);
 			this.$emit('update:priceTo', this.currentPriceTo);
 			this.$emit('update:categoryId', this.currentCategoryId);
-			this.$emit('update:colorFilter', this.colorValue);
+			this.$emit('update:colorFilter', this.currentColor);
 		},
 		reset(){
 			this.$emit('update:priceFrom', 0);

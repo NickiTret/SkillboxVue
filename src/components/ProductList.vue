@@ -5,7 +5,7 @@
 </template>
 <script>
 // eslint-disable-next-line prettier/prettier
-import ProductItem from './ProductItem';
+import ProductItem from '@/components/ProductItem';
 export default {
 	components: {ProductItem},
 	props: ['products']

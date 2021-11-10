@@ -1,5 +1,5 @@
 <template>
-	    <main class="content container">
+	    <main class="content container new--class">
         <div class="content__top content__top--catalog">
             <h1 class="content__title">
                 Каталог

@@ -1,6 +1,6 @@
 <template>
 
-<component :is="currentPageComponent" :page-params="currentPageParams"/>
+<component :is="currentPageComponent" :page-params="currentPageParams" @goToPage="(pageName, pageParams) => goToPage(pageName, pageParams)"/>
 
 </template>
 

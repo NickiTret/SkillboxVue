@@ -8,16 +8,12 @@
         152 товара
       </span>
         </div>
-
         <div class="content__catalog">
             <ProductFilter :price-from.sync="filterPriceFrom" :price-to.sync="filterPriceTo" :category-id.sync="filterCategoryId" :color-filter.sync="filterColors" />
-            <section class="catalog">
-
+            	<section class="catalog">
 					<ProductList :products="products"  />
 					<BasePagination v-model="page" :count="countProducts" :per-page="productsPerPage"/>
-                
 				</section>
-
         </div>
     </main>
 </template>

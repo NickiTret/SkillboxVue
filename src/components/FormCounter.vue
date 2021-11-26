@@ -17,23 +17,15 @@
 </template>
 
 <script>
+
 export default {
     data(){
     return {
       amount: 1
     };
   },
-  computed: {
-        amount: {
-            get(){
-                return this.item.amount;
-            },
-            set(value){
-                this.$store.commit('updateCartProductAmount', {productId: this.item.productId, amount: value});
-            }
-        }
-    },
   methods: {
+      
       addAmount(){
             this.amount++;
         },

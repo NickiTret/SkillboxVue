@@ -33,7 +33,8 @@ export default new Vuex.Store({
         },
         deleteCartProduct(state, productId) {
             state.cartProducts = state.cartProducts.filter(item => item.productId !== productId);
-        }
+        },
+
     },
     getters: {
         cartDetailProducts(state) {

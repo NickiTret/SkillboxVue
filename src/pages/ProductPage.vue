@@ -85,21 +85,9 @@
             </fieldset>
 
             <div class="item__row">
-              <div class="form__counter">
-                <button type="button" aria-label="Убрать один товар">
-                  <svg width="12" height="12" fill="currentColor">
-                    <use xlink:href="#icon-minus"></use>
-                  </svg>
-                </button>
+              
 
-                <input type="text" v-model.number="productAmount">
-
-                <button type="button" aria-label="Добавить один товар">
-                  <svg width="12" height="12" fill="currentColor">
-                    <use xlink:href="#icon-plus"></use>
-                  </svg>
-                </button>
-              </div>
+              <FormCounter />
 
               <button class="button button--primery" type="submit">
                 В корзину
@@ -167,12 +155,16 @@ import products from '@/data/products';
 import categories from '@/data/categories';
 import gotoPage from '@/helpers/gotoPage';
 import numberFormat from '@/helpers/numberFormat';
+import FormCounter from '@/components/FormCounter';
+
+
 export default {
 	data(){
     return {
       productAmount: 1
     };
   },
+  components: {FormCounter},
   filters: {
     numberFormat
   },
@@ -187,7 +179,6 @@ export default {
   methods: {
     gotoPage,
     addToCart(){
-      
       this.$store.commit(
         'addProductToCart',
         { productId: this.product.id, amount: this.productAmount }

@@ -87,7 +87,21 @@
             <div class="item__row">
               
 
-              <FormCounter v-model="productAmount" />
+              <div class="form__counter">
+                <button type="button" aria-label="Убрать один товар" @click.prevent="deleteAmount">
+                  <svg width="12" height="12" fill="currentColor">
+                    <use xlink:href="#icon-minus"></use>
+                  </svg>
+                </button>
+
+                <input type="text" v-model.number="productAmount">
+
+                <button type="button" aria-label="Добавить один товар" @click.prevent="addAmount">
+                  <svg width="12" height="12" fill="currentColor">
+                    <use xlink:href="#icon-plus"></use>
+                  </svg>
+                </button>
+    </div>
 
               <button class="button button--primery" type="submit">
                 В корзину
@@ -155,7 +169,7 @@ import products from '@/data/products';
 import categories from '@/data/categories';
 import gotoPage from '@/helpers/gotoPage';
 import numberFormat from '@/helpers/numberFormat';
-import FormCounter from '@/components/FormCounter';
+
 
 
 export default {
@@ -164,7 +178,7 @@ export default {
       productAmount: 1
     };
   },
-  components: {FormCounter},
+  
   filters: {
     numberFormat
   },
@@ -183,7 +197,16 @@ export default {
         'addProductToCart',
         { productId: this.product.id, amount: this.productAmount }
       );
-    }
+    },
+    addAmount(){
+            this.productAmount++;
+        },
+    deleteAmount(){
+            if(this.productAmount > 0) {
+                this.productAmount--;
+            }
+            
+        }
   },
 }
 </script>

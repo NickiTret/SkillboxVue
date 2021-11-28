@@ -87,7 +87,7 @@
             <div class="item__row">
               
 
-              <div class="form__counter">
+              <!-- <div class="form__counter">
                 <button type="button" aria-label="Убрать один товар" @click.prevent="deleteAmount">
                   <svg width="12" height="12" fill="currentColor">
                     <use xlink:href="#icon-minus"></use>
@@ -101,7 +101,9 @@
                     <use xlink:href="#icon-plus"></use>
                   </svg>
                 </button>
-    </div>
+              </div> -->
+
+              <FormCounter :itemAmount.sync="productAmount"/>
 
               <button class="button button--primery" type="submit">
                 В корзину
@@ -169,7 +171,7 @@ import products from '@/data/products';
 import categories from '@/data/categories';
 import gotoPage from '@/helpers/gotoPage';
 import numberFormat from '@/helpers/numberFormat';
-
+import FormCounter from '@/components/FormCounter';
 
 
 export default {
@@ -178,7 +180,7 @@ export default {
       productAmount: 1
     };
   },
-  
+  components: {FormCounter},
   filters: {
     numberFormat
   },

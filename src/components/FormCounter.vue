@@ -19,13 +19,9 @@
 <script>
 
 export default {
-    data(){
-    return {
-      amount: 1
-    };
-  },
+  props: ['itemAmount'],
+    
   methods: {
-      
       addAmount(){
             this.amount++;
         },
@@ -35,7 +31,17 @@ export default {
             }
             
         }
-  }
+  },
+  computed: {
+    amount: {
+      get(){
+        return this.itemAmount;
+      },
+      set(value){
+        this.$emit('update:itemAmount', value);
+      }
+    }
+  },
 }
 </script>
 
